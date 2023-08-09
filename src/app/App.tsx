@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { classNames } from "shared/lib/classNames";
 import { useTheme } from "app/providers/ThemeProviders";
 import { AppRouter } from "./providers/router";
-
+import { Navbar } from "widgets/navbar";
 
 
 const App = () => {
@@ -12,9 +12,8 @@ const App = () => {
 
     return (
         <div className={classNames('app', {}, [theme])}>
+            <Navbar/>
             <button onClick={toggleTheme}>toggle theme</button>
-            <Link to={'/about'}>About</Link>
-            <Link to={'/'}>Main</Link>
             <AppRouter/>
         </div>
     )
