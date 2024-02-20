@@ -3,6 +3,7 @@ import { Sidebar } from 'widgets/Sidebar/ui/Sidebar/Sidebar';
 import {
     renderWithTranslation,
 } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
+import React from 'react';
 
 describe('Sidebar', () => {
     test('with only first param', () => {
