@@ -1,8 +1,7 @@
-import { Theme } from "app/providers/ThemeProviders";
-import React from "react";
+import { Theme } from 'app/providers/ThemeProviders';
 
-export const ThemeDecorator = (theme: Theme) => (Story) => (
+export const ThemeDecorator = (theme: Theme) => (Story: any) => (
     <div className={`app ${theme}`}>
-        <Story/>
+        <Story />
     </div>
-)
+);

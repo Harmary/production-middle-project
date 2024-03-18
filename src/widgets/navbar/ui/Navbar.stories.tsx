@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Navbar } from './Navbar';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProviders';
+import { Navbar } from './Navbar';
 
 const meta: Meta<typeof Navbar> = {
     title: 'Example/Navbar',
@@ -10,9 +10,9 @@ const meta: Meta<typeof Navbar> = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+    // argTypes: {
+    //     backgroundColor: { control: 'color' },
+    // },
 };
 
 export default meta;
@@ -29,4 +29,4 @@ export const Dark: Story = {
     },
 };
 
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

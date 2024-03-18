@@ -9,9 +9,9 @@ const meta: Meta<typeof Button> = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+    // argTypes: {
+    //     backgroundColor: { control: 'color' },
+    // },
 };
 
 export default meta;
@@ -19,21 +19,21 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
     args: {
-        children: "Text",
-        
+        children: 'Text',
+
     },
 };
 
 export const Clear: Story = {
     args: {
-        children: "Text",
-        theme: ThemeButton.CLEAR
+        children: 'Text',
+        theme: ThemeButton.CLEAR,
     },
 };
 
 export const Outlined: Story = {
     args: {
-        children: "Text",
-        theme: ThemeButton.OUTLINE
+        children: 'Text',
+        theme: ThemeButton.OUTLINE,
     },
 };

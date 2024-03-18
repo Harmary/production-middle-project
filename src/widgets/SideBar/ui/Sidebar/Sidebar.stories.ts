@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Sidebar } from './Sidebar';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProviders';
+import { Sidebar } from './Sidebar';
 
 const meta: Meta<typeof Sidebar> = {
     title: 'Example/Sidebar',
@@ -11,9 +11,9 @@ const meta: Meta<typeof Sidebar> = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+    // argTypes: {
+    //     backgroundColor: { control: 'color' },
+    // },
 };
 
 export default meta;
@@ -29,5 +29,4 @@ export const Dark: Story = {
     },
 };
 
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
-
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
