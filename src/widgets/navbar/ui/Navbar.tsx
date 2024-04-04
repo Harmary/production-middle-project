@@ -1,6 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
-import React from 'react';
 
 type NavbarProps = {
     className?: string;
