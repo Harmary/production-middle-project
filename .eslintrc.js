@@ -4,7 +4,9 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+    extends: ['plugin:react/recommended',
+        'airbnb',
+        'plugin:i18next/recommended', 'plugin:storybook/recommended'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -17,6 +19,7 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'i18next',
+        'react-hooks',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -53,6 +56,7 @@ module.exports = {
         {
             files: ['**/src/**/*.test.{ts,tsx}'],
             rules: {
+                'jsx-a11y/click-events-have-key-events': 'off',
                 'i18next/no-literal-string': 'off',
             },
         },
