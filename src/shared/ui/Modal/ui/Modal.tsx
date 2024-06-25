@@ -22,8 +22,7 @@ export function Modal(props: ModalProps) {
         [cls.opened]: isOpen,
         [cls.isClosed]: isClosing,
     };
-
-    const closeHandler = () => {
+    const closeHandler = useCallback(() => {
         if (onClosed) {
             setIsClosing(true);
             timedRef.current = setTimeout(() => {
@@ -31,7 +30,7 @@ export function Modal(props: ModalProps) {
                 setIsClosing(false);
             }, ANIMATION_DELAY);
         }
-    };
+    }, [onClosed]);
 
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();
@@ -39,7 +38,7 @@ export function Modal(props: ModalProps) {
 
     const onKeyDown = useCallback(() => {
         closeHandler();
-    }, [closeHandler()]);
+    }, [closeHandler]);
 
     React.useEffect(() => {
         if (isOpen) {
