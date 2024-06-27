@@ -4,20 +4,16 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProviders';
 import { Sidebar } from './Sidebar';
 
-const meta: Meta<typeof Sidebar> = {
+const meta: Meta = {
     title: 'Example/Sidebar',
     component: Sidebar,
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
-    // argTypes: {
-    //     backgroundColor: { control: 'color' },
-    // },
 };
 
 export default meta;
-type Story = StoryObj<typeof Sidebar>;
+type Story = StoryObj;
 
 export const Light: Story = {
     args: {

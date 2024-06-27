@@ -1,7 +1,12 @@
 {
-    "Тестовый пример": "Text example",
-    "Перевод": "Translate",
-    "Язык": "English",
-    "Страница не найдена": "Page not found",
-    "Короткий язык": "EN"
+  "Тестовый пример": "Text example",
+  "Перевод": "Translate",
+  "Язык": "English",
+  "Страница не найдена": "Page not found",
+  "Короткий язык": "EN",
+  "increment": "increment",
+  "decrement": "decrement",
+  "Sing in": "Sing in",
+  "О сайте": "About",
+  "Главная": "Main"
 }

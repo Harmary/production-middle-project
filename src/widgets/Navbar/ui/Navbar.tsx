@@ -24,7 +24,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                 className={cls.links}
                 onClick={onToggleModal}
             >
-                {t('Войти')}
+                {t('Sing in')}
             </Button>
             <Modal isOpen={isAuthModal} onClosed={onToggleModal}>
                 {/* eslint-disable-next-line */}

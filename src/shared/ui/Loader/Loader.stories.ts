@@ -4,20 +4,19 @@ import { Theme } from 'app/providers/ThemeProviders';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Loader } from './Loader';
 
-const meta: Meta<typeof Loader> = {
+const meta: Meta = {
     title: 'Example/Loader',
     component: Loader,
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
     argTypes: {
         backgroundColor: { control: 'color' },
     },
 };
 
 export default meta;
-type Story = StoryObj<typeof Loader>;
+type Story = StoryObj;
 
 export const Light: Story = {
     args: {

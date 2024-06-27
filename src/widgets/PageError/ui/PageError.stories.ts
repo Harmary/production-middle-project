@@ -10,14 +10,10 @@ const meta: Meta<typeof PageError> = {
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
-    argTypes: {
-        // backgroundColor: { control: 'color' },
-    },
 };
 
 export default meta;
-type Story = StoryObj<typeof PageError>;
+type Story = StoryObj;
 
 export const Light: Story = {
     args: {

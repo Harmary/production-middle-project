@@ -4,20 +4,16 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProviders';
 import { AppLink, AppLinkTheme } from './AppLink';
 
-const meta: Meta<typeof AppLink> = {
+const meta: Meta = {
     title: 'Example/AppLink',
     component: AppLink,
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
-    // argTypes: {
-    //     backgroundColor: { control: 'color' },
-    // },
 };
 
 export default meta;
-type Story = StoryObj<typeof AppLink>;
+type Story = StoryObj;
 
 export const Primary: Story = {
     args: {

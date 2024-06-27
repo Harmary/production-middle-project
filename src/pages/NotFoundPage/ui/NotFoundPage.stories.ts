@@ -4,16 +4,12 @@ import { Theme } from 'app/providers/ThemeProviders';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { NotFoundPage } from './NotFoundPage';
 
-const meta: Meta<typeof NotFoundPage> = {
+const meta: Meta = {
     title: 'Example/NotFoundPage',
     component: NotFoundPage,
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
-    // argTypes: {
-    //     backgroundColor: { control: 'color' },
-    // },
 };
 
 export default meta;
