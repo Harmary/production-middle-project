@@ -1,5 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { useCallback } from 'react';
+import { useTheme } from 'app/providers/ThemeProviders';
 import cls from './Modal.module.scss';
 
 type ModalProps = {
@@ -17,6 +18,7 @@ export function Modal(props: ModalProps) {
     } = props;
     const [isClosing, setIsClosing] = React.useState(false);
     const timedRef = React.useRef<ReturnType<typeof setTimeout>>();
+    const { theme } = useTheme();
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
@@ -51,10 +53,10 @@ export function Modal(props: ModalProps) {
     }, [isOpen, onKeyDown]);
 
     return (
-        <div className={classNames(cls.Modal, mods, [className])}>
+        <div className={classNames(cls.Modal, mods, [className, theme])}>
             <div className={cls.overlay} onClick={closeHandler}>
                 <div
-                    className={classNames(cls.content, mods, [className])}
+                    className={classNames(cls.content, mods, [className, theme])}
                     onClick={onContentClick}
                 >
                     {children}
