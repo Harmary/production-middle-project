@@ -5,8 +5,8 @@ import { Counter } from '..';
 describe('Counter', () => {
     test('with only first param', () => {
         componentRender(
-            <Counter/>
-            ,{
+            typeof Counter,
+            {
                 initialState: {
                     counter: { value: 10 },
                 },
@@ -16,8 +16,8 @@ describe('Counter', () => {
     });
     test('increment', () => {
         componentRender(
-            <Counter/>
-            ,{
+            typeof Counter,
+            {
                 initialState: {
                     counter: { value: 10 },
                 },
@@ -28,8 +28,8 @@ describe('Counter', () => {
     });
     test('decrement', () => {
         componentRender(
-            <Counter/>
-            ,{
+            typeof Counter,
+            {
                 initialState: {
                     counter: { value: 10 },
                 },

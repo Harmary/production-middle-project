@@ -1,7 +1,7 @@
 .Button {
     cursor: pointer;
     color: var(--button-text);
-    border-radius: 5px;
+    border-radius: var(--input-border-radius);
     padding: 10px 15px;
     background-color: var(--primary-color);
     text-align: center;
@@ -22,7 +22,7 @@
 }
 
 .outline {
-    border: 2px solid var(--primary-color);
+    border: var(--input-border-size) solid var(--primary-color);
     color: var(--primary-color);
     background-color: var(--bg-color);
 }
