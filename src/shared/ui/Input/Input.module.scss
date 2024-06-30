@@ -22,15 +22,43 @@
     }
 }
 
+.InputLabel {
+    color: var(--unfocus-input);
+    font-size: calc(var(--font-size-m) + 4px);
+}
+
 .filled {
+    .InputLabel {
+        position: absolute;
+        top: 14px;
+        left: 16px;
+    }
+
     .Input {
+        padding-top: 24px;
+        padding-bottom: 8px;
         border-radius: 0;
         background-color: var(--unfocus-input);
         border-bottom: var(--input-border-size) var(--inverted-unfocus-input) solid;
 
+        &::placeholder {
+            opacity: 0;
+
+            &:focus {
+                opacity: 1;
+            }
+        }
+
         &:focus {
             animation: outlined-focus 0.5s forwards;
             border-color: var(--primary-color);
+        }
+
+        &:focus + .InputLabel {
+            animation: filled-label-focus 0.2s ease-out;
+            top: 2px;
+            font-size: var(--font-size-m);
+            color: var(--primary-color);
         }
     }
 }
@@ -42,7 +70,7 @@
         left: 16px;
     }
 
-    & .Input {
+    .Input {
         border: var(--input-border-size) var(--unfocus-input) solid;
         box-shadow: none;
         background-color: inherit;
@@ -52,9 +80,38 @@
             border-color: var(--primary-color);
         }
 
-		&:focus + .InputLabel {
-			top: -10px;
-		}
+        &:focus + .InputLabel {
+            animation: outlined-label-focus 0.2s ease-out;
+            background-color: var(--inverted-bg-color);
+            top: -10px;
+            padding: 0 4px;
+            font-size: var(--font-size-m);
+            color: var(--primary-color);
+        }
+    }
+}
+
+@keyframes filled-label-focus {
+    from {
+        top: 14px;
+        font-size: calc(var(--font-size-m) + 4px);
+    }
+
+    to {
+        top: 2px;
+        font-size: var(--font-size-m);
+    }
+}
+
+@keyframes outlined-label-focus {
+    from {
+        top: 16px;
+        font-size: calc(var(--font-size-m) + 4px);
+    }
+
+    to {
+        top: -10px;
+        font-size: var(--font-size-m);
     }
 }
 

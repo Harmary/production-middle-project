@@ -40,19 +40,8 @@ export function Input(props: InputProps) {
 
     return (
         <div className={classNames(cls.InputWrapper, mods, [className])}>
-            {
-                !!label
-                && (
-                    <label
-                        htmlFor={label}
-                        className={classNames(cls.InputLabel)}
-                    >
-                        {label}
-                    </label>
-                )
-            }
             <input
-                className={classNames(cls.Input)}
+                className={cls.Input}
                 style={fullWidth ? { width: '100%' } : { width: '400px' }}
                 type={type}
                 value={value}
@@ -60,6 +49,17 @@ export function Input(props: InputProps) {
                 placeholder={placeholder}
                 {...otherProps}
             />
+            {
+                !!label
+                && (
+                    <label
+                        htmlFor={label}
+                        className={cls.InputLabel}
+                    >
+                        {label}
+                    </label>
+                )
+            }
         </div>
     );
 }
