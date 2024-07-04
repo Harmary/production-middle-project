@@ -13,17 +13,19 @@
     &::placeholder {
         font-family: var(--font-family-main);
         color: var(--inverted-bg-color);
+        opacity: 0;
     }
 
     &:focus {
         &::placeholder {
-            color: var(--inverted-unfocus-input);
+            color: var(--unfocus-input-border);
+            opacity: 1;
         }
     }
 }
 
 .InputLabel {
-    color: var(--unfocus-input);
+    color: var(--unfocus-input-border);
     font-size: calc(var(--font-size-m) + 4px);
 }
 
@@ -38,16 +40,8 @@
         padding-top: 24px;
         padding-bottom: 8px;
         border-radius: 0;
-        background-color: var(--unfocus-input);
-        border-bottom: var(--input-border-size) var(--inverted-unfocus-input) solid;
-
-        &::placeholder {
-            opacity: 0;
-
-            &:focus {
-                opacity: 1;
-            }
-        }
+        background-color: var(--unfocus-input-bg);
+        border-bottom: var(--input-border-size) var(--unfocus-input-border) solid;
 
         &:focus {
             animation: outlined-focus 0.5s forwards;
@@ -71,7 +65,7 @@
     }
 
     .Input {
-        border: var(--input-border-size) var(--unfocus-input) solid;
+        border: var(--input-border-size) var(--unfocus-input-border) solid;
         box-shadow: none;
         background-color: inherit;
 
@@ -82,11 +76,26 @@
 
         &:focus + .InputLabel {
             animation: outlined-label-focus 0.2s ease-out;
-            background-color: var(--inverted-bg-color);
+            background-color: var(--bg-color);
             top: -10px;
             padding: 0 4px;
             font-size: var(--font-size-m);
             color: var(--primary-color);
+        }
+    }
+}
+
+.inverted {
+    .Input {
+        border: var(--input-border-size) var(--inverted-unfocus-input-border) solid;
+         &:focus {
+            animation: inverted-outlined-focus 0.5s forwards;
+            border-color: var(--inverted-primary-color);
+        }
+
+        &:focus + .InputLabel {
+            background-color: var(--inverted-bg-color);
+            color: var(--inverted-primary-color);
         }
     }
 }
@@ -115,12 +124,23 @@
     }
 }
 
+
 @keyframes outlined-focus {
     from {
-        border-color: var(--unfocus-input);
+        border-color: var(--unfocus-input-border);
     }
 
     to {
         border-color: var(--primary-color);
+    }
+}
+
+@keyframes inverted-outlined-focus {
+    from {
+        border-color: var(--inverted-unfocus-input-border);
+    }
+
+    to {
+        border-color: var(--inverted-primary-color);
     }
 }

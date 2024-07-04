@@ -16,6 +16,7 @@ interface InputProps extends HTMLInputProps {
     onChange?: (value: string) => void;
     label?: string;
     fullWidth?: boolean
+    inverted?: boolean
 }
 
 export function Input(props: InputProps) {
@@ -28,6 +29,7 @@ export function Input(props: InputProps) {
         placeholder = '',
         label,
         fullWidth = false,
+        inverted = false,
         ...otherProps
     } = props;
 
@@ -36,6 +38,7 @@ export function Input(props: InputProps) {
     };
     const mods: Record<string, boolean> = {
         [cls[variant]]: true,
+        [cls['inverted']]: inverted,
     };
 
     return (

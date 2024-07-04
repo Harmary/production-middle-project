@@ -1,4 +1,4 @@
-/* eslint-disable */
+// eslint-disable 
 import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
 import { BuildPaths } from '../build/types/config';
@@ -9,7 +9,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
         build: '',
         html: '',
         entry: '',
-        src: path.resolve(__dirname, '..', './', 'src'),
+        src: path.resolve(__dirname, '..', '..', './', 'src'),
     };
 
     config.resolve?.modules?.push(paths.src);

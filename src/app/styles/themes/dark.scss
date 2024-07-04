@@ -5,6 +5,8 @@
     --secondary-color: #03dac6;
     --inverted-primary-color: #6200ee;
     --inverted-secondary-color: #00a695;
-    --unfocus-input: rgb(0 0 0 / 20%);
-    --inverted-unfocus-input: rgb(0 0 0 / 30%);
+    --unfocus-input-bg: rgb(133, 133, 133, 30%);
+    --inverted-unfocus-input-bg: rgb(0 0 0 / 30%);
+    --unfocus-input-border: rgba(199, 199, 199, 0.7);
+    --inverted-unfocus-input-border: rgb(0 0 0 / 30%);
 }

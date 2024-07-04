@@ -13,8 +13,8 @@ export function LoginForm({ className }: LoginFormProps) {
 
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
-            <Input placeholder={t('Login')} label={t('Login')} />
-            <Input placeholder={t('Password')} label={t('Password')} />
+            <Input placeholder={t('Login')} label={t('Login')} inverted/>
+            <Input placeholder={t('Password')} label={t('Password')} inverted />
             <Button className={cls.loginBtn}>{t('Submit')}</Button>
         </div>
     );
