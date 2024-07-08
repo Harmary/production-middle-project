@@ -38,7 +38,7 @@ export function Input(props: InputProps) {
     };
     const mods: Record<string, boolean> = {
         [cls[variant]]: true,
-        [cls['inverted']]: inverted,
+        [cls.inverted]: inverted,
     };
 
     return (

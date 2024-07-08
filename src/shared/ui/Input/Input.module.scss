@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 .InputWrapper {
     width: 100%;
     position: relative;
@@ -29,30 +30,19 @@
     font-size: calc(var(--font-size-m) + 4px);
 }
 
-.filled {
-    .InputLabel {
-        position: absolute;
-        top: 14px;
-        left: 16px;
-    }
-
+// Переорганизация начинается здесь
+.inverted {
     .Input {
-        padding-top: 24px;
-        padding-bottom: 8px;
-        border-radius: 0;
-        background-color: var(--unfocus-input-bg);
-        border-bottom: var(--input-border-size) var(--unfocus-input-border) solid;
+        border: var(--input-border-size) var(--inverted-unfocus-input-border) solid;
 
         &:focus {
-            animation: outlined-focus 0.5s forwards;
-            border-color: var(--primary-color);
+            animation: inverted-outlined-focus 0.5s forwards;
+            border-color: var(--inverted-primary-color);
         }
 
         &:focus + .InputLabel {
-            animation: filled-label-focus 0.2s ease-out;
-            top: 2px;
-            font-size: var(--font-size-m);
-            color: var(--primary-color);
+            background-color: var(--inverted-bg-color);
+            color: var(--inverted-primary-color);
         }
     }
 }
@@ -85,21 +75,35 @@
     }
 }
 
-.inverted {
+.filled {
+    .InputLabel {
+        position: absolute;
+        top: 14px;
+        left: 16px;
+    }
+
     .Input {
-        border: var(--input-border-size) var(--inverted-unfocus-input-border) solid;
-         &:focus {
-            animation: inverted-outlined-focus 0.5s forwards;
-            border-color: var(--inverted-primary-color);
+        padding-top: 24px;
+        padding-bottom: 8px;
+        border-radius: 0;
+        background-color: var(--unfocus-input-bg);
+        border-bottom: var(--input-border-size) var(--unfocus-input-border) solid;
+
+        &:focus {
+            animation: outlined-focus 0.5s forwards;
+            border-color: var(--primary-color);
         }
 
         &:focus + .InputLabel {
-            background-color: var(--inverted-bg-color);
-            color: var(--inverted-primary-color);
+            animation: filled-label-focus 0.2s ease-out;
+            top: 2px;
+            font-size: var(--font-size-m);
+            color: var(--primary-color);
         }
     }
 }
 
+// Ключевые кадры остаются без изменений
 @keyframes filled-label-focus {
     from {
         top: 14px;
@@ -123,7 +127,6 @@
         font-size: var(--font-size-m);
     }
 }
-
 
 @keyframes outlined-focus {
     from {

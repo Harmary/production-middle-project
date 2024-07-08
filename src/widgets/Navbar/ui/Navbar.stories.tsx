@@ -2,8 +2,8 @@ import React from 'react';
 import { StoryFn } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProviders';
-import { Navbar } from './Navbar';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Navbar } from './Navbar';
 
 export default {
     title: 'widget/Navbar',

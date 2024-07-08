@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Input, InputVariants } from './Input';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProviders';
+import { Input, InputVariants } from './Input';
 
 const meta: Meta = {
     title: 'Example/Input',
@@ -22,7 +22,7 @@ export const Filled: Story = {
     },
 };
 
-export const Filled_dark: Story = {
+export const FilledDark: Story = {
     args: {
         placeholder: 'Test',
         label: 'Test',
@@ -30,7 +30,7 @@ export const Filled_dark: Story = {
     },
 };
 
-Filled_dark.decorators = [ThemeDecorator(Theme.DARK)];
+FilledDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Outlined: Story = {
     args: {
@@ -40,7 +40,7 @@ export const Outlined: Story = {
     },
 };
 
-export const Outlined_dark: Story = {
+export const OutlinedDark: Story = {
     args: {
         placeholder: 'Test',
         label: 'Test',
@@ -48,4 +48,4 @@ export const Outlined_dark: Story = {
     },
 };
 
-Outlined_dark.decorators = [ThemeDecorator(Theme.DARK)];
+OutlinedDark.decorators = [ThemeDecorator(Theme.DARK)];

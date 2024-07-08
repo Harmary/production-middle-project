@@ -9,13 +9,13 @@ const config: StorybookConfig = {
         '@storybook/addon-onboarding',
         '@storybook/addon-interactions',
         '@storybook/addon-webpack5-compiler-swc',
-        '@chromatic-com/storybook'
+        '@chromatic-com/storybook',
     ],
 
     framework: {
         name: '@storybook/react-webpack5',
         options: {
-          builder: {}
+            builder: {},
         },
     },
 
@@ -32,7 +32,7 @@ const config: StorybookConfig = {
     docs: {},
 
     typescript: {
-        reactDocgen: 'react-docgen-typescript'
-    }
+        reactDocgen: 'react-docgen-typescript',
+    },
 };
 export default config;
