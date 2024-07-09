@@ -11,5 +11,9 @@
   "Главная": "Main",
   "Submit": "Submit",
   "Login": "Login",
-  "Password": "Password"
+  "Password": "Password",
+  "Authtorization": "Authorization",
+  "Wrong username or password": "Wrong username or password",
+  "Log out": "Log out",
+  "Log in": "Log in"
 }

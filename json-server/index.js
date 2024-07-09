@@ -1,6 +1,7 @@
 const fs = require('fs');
 const jsonServer = require('json-server');
 const path = require('path');
+const cors = require('cors');
 
 const server = jsonServer.create();
 
@@ -8,9 +9,11 @@ const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
+server.use(cors({ origin: '*' }));
 
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
     await new Promise((res) => {
         setTimeout(res, 800);
     });

@@ -38,14 +38,17 @@ export function Input(props: InputProps) {
     };
     const mods: Record<string, boolean> = {
         [cls[variant]]: true,
-        [cls.inverted]: inverted,
+        // eslint-disable-next-line dot-notation
+        [cls['inverted']]: inverted,
     };
 
     return (
         <div className={classNames(cls.InputWrapper, mods, [className])}>
             <input
                 className={cls.Input}
-                style={fullWidth ? { width: '100%' } : { width: '400px' }}
+                style={{
+                    width: fullWidth ? '100%' : '400px',
+                }}
                 type={type}
                 value={value}
                 onChange={onChangeHandler}

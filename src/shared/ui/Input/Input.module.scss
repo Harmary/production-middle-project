@@ -30,23 +30,6 @@
     font-size: calc(var(--font-size-m) + 4px);
 }
 
-// Переорганизация начинается здесь
-.inverted {
-    .Input {
-        border: var(--input-border-size) var(--inverted-unfocus-input-border) solid;
-
-        &:focus {
-            animation: inverted-outlined-focus 0.5s forwards;
-            border-color: var(--inverted-primary-color);
-        }
-
-        &:focus + .InputLabel {
-            background-color: var(--inverted-bg-color);
-            color: var(--inverted-primary-color);
-        }
-    }
-}
-
 .outlined {
     .InputLabel {
         position: absolute;
@@ -59,12 +42,14 @@
         box-shadow: none;
         background-color: inherit;
 
-        &:focus {
+        &:focus,
+        &:not(:placeholder-shown) {
             animation: outlined-focus 0.5s forwards;
             border-color: var(--primary-color);
         }
 
-        &:focus + .InputLabel {
+        &:focus + .InputLabel,
+        &:not(:placeholder-shown) + .InputLabel {
             animation: outlined-label-focus 0.2s ease-out;
             background-color: var(--bg-color);
             top: -10px;
@@ -89,12 +74,14 @@
         background-color: var(--unfocus-input-bg);
         border-bottom: var(--input-border-size) var(--unfocus-input-border) solid;
 
-        &:focus {
+        &:focus,
+        &:not(:placeholder-shown) {
             animation: outlined-focus 0.5s forwards;
             border-color: var(--primary-color);
         }
 
-        &:focus + .InputLabel {
+        &:focus + .InputLabel,
+        &:not(:placeholder-shown) + .InputLabel {
             animation: filled-label-focus 0.2s ease-out;
             top: 2px;
             font-size: var(--font-size-m);
@@ -103,7 +90,24 @@
     }
 }
 
-// Ключевые кадры остаются без изменений
+.inverted {
+    .Input {
+        border: var(--input-border-size) var(--inverted-unfocus-input-border) solid;
+
+        &:focus,
+        &:not(:placeholder-shown) {
+            animation: inverted-outlined-focus 0.5s forwards;
+            border-color: var(--inverted-primary-color);
+        }
+
+        &:focus + .InputLabel,
+        &:not(:placeholder-shown) + .InputLabel {
+            background-color: var(--inverted-bg-color);
+            color: var(--inverted-primary-color);
+        }
+    }
+}
+
 @keyframes filled-label-focus {
     from {
         top: 14px;
