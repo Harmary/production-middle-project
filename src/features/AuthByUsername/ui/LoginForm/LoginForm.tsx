@@ -5,16 +5,19 @@ import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { Text } from 'shared/ui/Text/Text';
-import { loginActions } from '../../model/slice/LoginSlice';
+import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
+import { loginActions, loginReducer } from '../../model/slice/LoginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUserName';
 import cls from './LoginForm.module.scss';
 
-type LoginFormProps = {
+export type LoginFormProps = {
     className?: string;
 }
 
-export const LoginForm = memo(({ className }: LoginFormProps) => {
+const initialReducers = { loginForm: loginReducer };
+
+const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const {
@@ -34,26 +37,30 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
     }, [dispatch, password, username]);
 
     return (
-        <div className={classNames(cls.LoginForm, {}, [className])}>
-            <Text title={t('Authtorization')} />
-            {error && <Text text={error} error />}
-            <Input
-                placeholder={t('Login')}
-                label={t('Login')}
-                inverted
-                onChange={onChangeUsername}
-                value={username}
-            />
-            <Input
-                placeholder={t('Password')}
-                label={t('Password')}
-                inverted
-                onChange={onChangePassword}
-                value={password}
-            />
-            <Button className={cls.loginBtn} onClick={onLoginClick} disabled={isLoading}>
-                {t('Submit')}
-            </Button>
-        </div>
+        <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
+            <div className={classNames(cls.LoginForm, {}, [className])}>
+                <Text title={t('Authtorization')} />
+                {error && <Text text={error} error />}
+                <Input
+                    placeholder={t('Login')}
+                    label={t('Login')}
+                    inverted
+                    onChange={onChangeUsername}
+                    value={username}
+                />
+                <Input
+                    placeholder={t('Password')}
+                    label={t('Password')}
+                    inverted
+                    onChange={onChangePassword}
+                    value={password}
+                />
+                <Button className={cls.loginBtn} onClick={onLoginClick} disabled={isLoading}>
+                    {t('Submit')}
+                </Button>
+            </div>
+        </DynamicModuleLoader>
     );
 });
+
+export default LoginForm;
