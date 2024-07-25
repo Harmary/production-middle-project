@@ -8,7 +8,7 @@ type LangSwitcherProps = {
     short?: boolean;
 }
 
-export function LangSwitcher({ className, short }: LangSwitcherProps) {
+export const LangSwitcher = React.memo(({ className, short }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
     const toggle = () => {
@@ -24,4 +24,4 @@ export function LangSwitcher({ className, short }: LangSwitcherProps) {
             {t(short ? 'Короткий язык' : 'Язык')}
         </Button>
     );
-}
+});

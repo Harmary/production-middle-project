@@ -1,15 +1,15 @@
+import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme, Theme } from 'app/providers/ThemeProviders';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import LightTheme from 'shared/assets/icons/lightTheme.svg';
 import DarkTheme from 'shared/assets/icons/darkTheme.svg';
-import React from 'react';
 
 type ThemeSwitcherProps = {
-    className?: string;
-}
+  className?: string;
+};
 
-export function ThemeSwitcher({ className }: ThemeSwitcherProps) {
+export const ThemeSwitcher = React.memo(({ className }: ThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme();
 
     return (
@@ -21,4 +21,4 @@ export function ThemeSwitcher({ className }: ThemeSwitcherProps) {
             {theme === Theme.DARK ? <LightTheme /> : <DarkTheme />}
         </Button>
     );
-}
+});

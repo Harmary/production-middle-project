@@ -14,6 +14,14 @@
         }
     ],
     "profile": {
-        "name": "typicode"
+       "id": 1,
+        "name": "Maria",
+        "lastname": "Kharlamova",
+        "username": "admin",
+        "age": 22,
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Sevastopol",
+        "avatar": "https://sun9-43.userapi.com/impg/UZlkq2ILBrwpOUC3hXJLjNJDo7_E_RFLNrknDQ/0LOkYy5blGc.jpg?size=1620x2160&quality=95&sign=84c5996462f9ffb0d6c22079d49e6635&type=album"
     }
 }
