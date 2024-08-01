@@ -7,3 +7,11 @@ export {
     profileActions,
     profileReducer,
 } from './model/slice/ProfileSlice';
+
+export {
+    selectProfileData,
+} from './model/selectors/selectProfileData/selectProfileData';
+
+export {
+    ProfileCard,
+} from './ui/ProfileCard/ProfileCard';

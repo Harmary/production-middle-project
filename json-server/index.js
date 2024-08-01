@@ -41,7 +41,6 @@ server.post('/login', (req, res) => {
         return res.status(500).json({ message: e.message });
     }
 });
-
 // проверяем, авторизован ли пользователь
 // eslint-disable-next-line
 server.use((req, res, next) => {
