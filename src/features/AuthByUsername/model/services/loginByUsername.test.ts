@@ -12,6 +12,7 @@ describe('loginByUsername', () => {
         mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValues }));
 
         const thunk = new TestAsyncThunk(loginByUsername);
+        thunk.api.post.mockReturnValue(Promise.resolve({ data: userValues }));
         const result = await thunk.callFunc({ username: '123', password: '123' });
 
         expect(mockedAxios.post).toBeCalled();
