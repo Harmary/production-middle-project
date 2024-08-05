@@ -9,7 +9,7 @@ type TextProps = {
 }
 
 export function Text({
-    className, text, title, error,
+    className = '', text, title, error,
 }: TextProps) {
     const mods = {
         [cls.error]: error,

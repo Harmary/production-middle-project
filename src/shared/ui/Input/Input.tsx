@@ -21,7 +21,7 @@ interface InputProps extends HTMLInputProps {
 
 export function Input(props: InputProps) {
     const {
-        className,
+        className = '',
         value,
         onChange,
         type = 'text',

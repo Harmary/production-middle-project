@@ -11,7 +11,7 @@ type LoginModalProps = {
     onClose?: () => void;
 }
 
-export function LoginModal({ className, isOpen, onClose }: LoginModalProps) {
+export function LoginModal({ className = '', isOpen, onClose }: LoginModalProps) {
     return (
         <Modal
             className={classNames(cls.LoginModal, {}, [className])}

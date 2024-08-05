@@ -9,7 +9,7 @@ type ThemeSwitcherProps = {
   className?: string;
 };
 
-export const ThemeSwitcher = React.memo(({ className }: ThemeSwitcherProps) => {
+export const ThemeSwitcher = React.memo(({ className = '' }: ThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme();
 
     return (

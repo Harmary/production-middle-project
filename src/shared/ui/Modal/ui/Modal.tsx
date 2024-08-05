@@ -18,7 +18,7 @@ const ANIMATION_DELAY = 300;
 
 export const Modal = (props: ModalProps) => {
     const {
-        className,
+        className = '',
         children,
         isOpen,
         onClose,
@@ -68,7 +68,7 @@ export const Modal = (props: ModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
-    const mods: Record<string, boolean> = {
+    const mods: Record<string, boolean | undefined> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };

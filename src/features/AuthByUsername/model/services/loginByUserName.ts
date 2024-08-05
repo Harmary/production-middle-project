@@ -29,7 +29,7 @@ export const loginByUsername = createAsyncThunk<
                 USER_LOCALSTORAGE_KEY,
                 JSON.stringify(response.data),
             );
-            extra.navigate('/about');
+            // extra.navigate('/about');
             dispatch(userActions.setUser(response.data));
             return response.data;
         } catch (error) {

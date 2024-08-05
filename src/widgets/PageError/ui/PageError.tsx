@@ -11,7 +11,7 @@ type PageErrorProps = {
     className?: string;
 }
 
-export function PageError({ className }: PageErrorProps) {
+export function PageError({ className = '' }: PageErrorProps) {
     const { t } = useTranslation();
 
     const reloadPage = () => {

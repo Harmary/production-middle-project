@@ -6,7 +6,7 @@ type NotFoundPageProps = {
     className?: string;
 }
 
-export function NotFoundPage({ className }: NotFoundPageProps) {
+export function NotFoundPage({ className = '' }: NotFoundPageProps) {
     const { t } = useTranslation();
     return (
         <div className={classNames(cls.NotFoundPage, {}, [className])}>

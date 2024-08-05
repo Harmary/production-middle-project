@@ -10,7 +10,7 @@ type ProfileCardProps = {
   className?: string;
 };
 
-export const ProfileCard = ({ className }: ProfileCardProps) => {
+export const ProfileCard = ({ className = '' }: ProfileCardProps) => {
     const { t } = useTranslation();
     const data = useSelector(selectProfileData);
 

@@ -21,7 +21,9 @@ export const Light: Story = {
     },
 };
 Light.decorators = [StoreDecorator({
-    loginForm: { username: '123', password: 'asd', error: 'ERROR' },
+    loginForm: {
+        username: '123', password: 'asd', error: 'ERROR', isLoading: false,
+    },
 })];
 
 export const Dark: Story = {
@@ -30,5 +32,7 @@ export const Dark: Story = {
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    loginForm: { username: '123', password: 'asd', error: 'ERROR' },
+    loginForm: {
+        username: '123', password: 'asd', error: 'ERROR', isLoading: false,
+    },
 })];
