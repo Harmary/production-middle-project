@@ -16,8 +16,11 @@ export const ProfileCard = ({ className = '' }: ProfileCardProps) => {
 
     return (
         <div className={classNames(cls.ProfileCard, {}, [className])}>
-            <Text title={t('Profile')} />
-            <Button theme={ButtonTheme.OUTLINE}>{t('Edit')}</Button>
+            <div className={cls.title}>
+                <Text title={t('Profile')} />
+                <Button theme={ButtonTheme.OUTLINE}>{t('Edit')}</Button>
+            </div>
+
             <Text text={`${t('First name')} : ${data?.name}`} />
             <Text text={`${t('Last name')} : ${data?.lastname}`} />
         </div>

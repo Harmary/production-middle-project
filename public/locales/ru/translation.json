@@ -15,5 +15,8 @@
   "Wrong username or password": "Неверное имя пользователя или пароль",
   "Log out": "Выйти",
   "Log in": "Авторизоваться",
-  "Profile": "Профиль"
+  "Profile": "Профиль",
+  "First name": "Имя",
+  "Last name": "Фамилия",
+  "Edit": "Редактировать"
 }

@@ -1,3 +1,12 @@
 .ProfileCard {
     display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 4px;
+    box-sizing: content-box;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
 }

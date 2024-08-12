@@ -16,5 +16,8 @@
   "Wrong username or password": "Wrong username or password",
   "Log out": "Log out",
   "Log in": "Log in",
-  "Profile": "Profile"
+  "Profile": "Profile",
+  "First name": "First name",
+  "Last name": "Last name",
+  "Edit": "Edit"
 }
